@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
  //Escritos
 import 'package:componentes/src/pages/alert_pages.dart';
 import 'package:componentes/src/routes/routes.dart';
@@ -12,6 +13,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Componentesl App',
+      //configurar las zonas horarias
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en','US'),
+        const Locale('es','ES'),
+      ],
       //home: HomePage(),
       initialRoute: '/',
       routes: getApplicationRoutes(),
